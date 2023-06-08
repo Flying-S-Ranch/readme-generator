@@ -20,14 +20,30 @@ const titleQuestion = [
     name: "title" },
 ];
 
+const sections = [
+    "Description", "Table of Contents", "Installation", "Usage", "License", "Contributing", "Tests", "Questions"
+]
+
+
 // FUNCTION
 const createTitle = (answer) => {
     const { title } = answer
-    const userTitle = `# ${title}`
+    const userTitle = `# ${title}\n`
     fs.writeFile("README.md", userTitle, (err) => {
         if (err) throw err;
         console.log("Data saved!")
     })
+    addSections();
+}
+
+const addSections = () => {
+    for (const section of sections) {
+        let sectionHeading = `## ${section}\n`
+        fs.appendFile("README.md", sectionHeading, (err) => {
+            if (err) throw err;
+            console.log("sections added!")
+        })
+    }
 }
 // TODO: Create a function to write README file
 // The next three lines are adapted from activity 13 in this module
@@ -42,7 +58,8 @@ inquirer
 
 // INITIALIZATIONS
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+}
 
 // Function call to initialize app
 init();

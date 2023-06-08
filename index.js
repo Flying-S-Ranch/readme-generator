@@ -11,13 +11,20 @@ let answerString;
 
 // TODO: Create an array of questions for user input
 // This array follows the example of activity 20 in this module
-const questions = [
-];
 
-const titleQuestion = [
+const questions = [
     {type: "input",
     message: "What is the title of your project?",
-    name: "title" },
+    name: "Title" },
+    {type: "input",
+    message: "Enter a description of your project",
+    name: "Description" },
+    {type: "checkbox",
+    message: "Which of the following would you like to include in the table of contents?",
+    name: "Table of Contents",
+    choices: ["Installation", "Usage", "License", "Contributing", "Tests", "Questions"]
+    },
+    
 ];
 
 const sections = [
@@ -26,35 +33,49 @@ const sections = [
 
 
 // FUNCTION
-const createTitle = (answer) => {
-    const { title } = answer
-    const userTitle = `# ${title}\n`
+// TODO: Create a function to write README file
+const createFile = (answer) => {
+    const { Title } = answer
+    const userTitle = `# ${Title}\n`
     fs.writeFile("README.md", userTitle, (err) => {
         if (err) throw err;
-        console.log("Data saved!")
+        console.log("Title saved!")
     })
-    addSections();
+    
+    const descriptionHeading = `## ${sections[0]}\n`
+    fs.appendFile("README.md", descriptionHeading, (err) => {
+        if (err) throw err;
+        console.log("Description heading saved!")
+    })
+
+    const { Description } = answer
+    const userDescription = Description
+    fs.appendFile("README.md", userDescription, (err) => {
+        if (err) throw err;
+        console.log("Description content saved!")
+    })
+    // addSections();
 }
 
-const addSections = () => {
-    for (const section of sections) {
-        let sectionHeading = `## ${section}\n`
-        fs.appendFile("README.md", sectionHeading, (err) => {
-            if (err) throw err;
-            console.log("sections added!")
-        })
-    }
-}
-// TODO: Create a function to write README file
-// The next three lines are adapted from activity 13 in this module
-// fs.writeFile('README.md', entryOne, (err) =>
-// err ? console.error(err) : console.log('README file created')
-// );
+// const addSections = () => {
+//     for (const section of sections) {
+//         let sectionHeading = `## ${section}\n`
+//         fs.appendFile("README.md", sectionHeading, (err) => {
+//             if (err) throw err;
+//             console.log("sections added!")
+//         })
+//     }
+// }
+
+// const placeSections = (response) => {
+//     console.log(response)
+// }
+
 
 // USER INTERACTION
 inquirer
-  .prompt(titleQuestion)
-  .then((createTitle));
+  .prompt(questions)
+  .then((createFile))
 
 // INITIALIZATIONS
 // TODO: Create a function to initialize app

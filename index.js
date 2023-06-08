@@ -45,36 +45,36 @@ const questions = [
 function writeToFile({Title, Description, Installation, Usage, License, Contributing, Tests, Username}) {
     const template = `# ${Title}
 
-    [license badge]
+[license badge]
     
-    ## Description
-    ${Description}
+## Description
+${Description}
     
-    ## Table of Contents
-    - Installation
-    - Usage
-    - License
-    - Contributing
-    - Tests
-    - Questions
+## Table of Contents
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [License](#License)
+- [Contributing](#Contributing)
+- [Tests](#Tests)
+- [Questions](#Questions)
     
-    ## Installation
-    ${Installation}
+## Installation
+${Installation}
     
-    ## Usage
-    ${Usage}
+## Usage
+${Usage}
     
-    ## License
-    ${License}
+## License
+${License}
     
-    ## Contributing
-    ${Contributing}
+## Contributing
+${Contributing}
     
-    ## Tests
-    ${Tests}
+## Tests
+${Tests}
     
-    ## Questions
-    To get in touch with any questions, visit my <a href="https://github.com/${Username}"> Github Profile </a>`
+## Questions
+To get in touch with any questions, visit my <a href="https://github.com/${Username}"> Github Profile </a>`
     fs.writeFile ('README.md', template, (err) => {
         if (err) throw err;
         console.log("README.md file created")

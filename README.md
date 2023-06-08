@@ -1,6 +1,6 @@
 # a
 
-[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
     
 ## Description
 a
@@ -20,7 +20,7 @@ a
 a
     
 ## License
-IBM Public License Version 1.0
+GNU GPLv3
     
 ## Contributing
 a
@@ -29,4 +29,4 @@ a
 a
     
 ## Questions
-To get in touch with any questions, visit my <a href="https://github.com/a"> Github Profile </a>
+To get in touch with any questions, visit my <a href="https://github.com/a"> Github Profile </a> or send an <a href="mailto:a">email</a>

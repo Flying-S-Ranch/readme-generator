@@ -38,6 +38,10 @@ const questions = [
     message: "What is your Github username?",
     name: "Username",
     },
+    {type: "input",
+    message: "What is your email address?",
+    name: "Email",
+    },
 ];
 
 const licenseBadges= [
@@ -49,7 +53,7 @@ const licenseBadges= [
 
 // FUNCTIONS
 // TODO: Create a function to write README file
-function writeToFile({Title, Description, Installation, Usage, License, Contributing, Tests, Username}) {
+function writeToFile({Title, Description, Installation, Usage, License, Contributing, Tests, Username, Email}) {
     function chooseBadge() {
         const badgeIndex = questions[3].choices.indexOf(License)
         badgeLicense = licenseBadges[badgeIndex]
@@ -86,7 +90,7 @@ ${Contributing}
 ${Tests}
     
 ## Questions
-To get in touch with any questions, visit my <a href="https://github.com/${Username}"> Github Profile </a>`
+To get in touch with any questions, visit my <a href="https://github.com/${Username}"> Github Profile </a> or send an <a href="mailto:${Email}">email</a>`
     fs.writeFile ('README.md', template, (err) => {
         if (err) throw err;
         console.log("README.md file created")

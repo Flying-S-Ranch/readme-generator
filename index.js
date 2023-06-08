@@ -81,7 +81,7 @@ ${Installation}
 ${Usage}
     
 ## License
-${License}
+This project is covered under the ${License} license.
     
 ## Contributing
 ${Contributing}

@@ -1,7 +1,102 @@
-// // DEPENDENCIES
-// // TODO: Include packages needed for this application
-// const inquirer = require('inquirer');
-// const fs = require('fs');
+// DEPENDENCIES
+// TODO: Include packages needed for this application
+const inquirer = require('inquirer');
+const fs = require('fs');
+
+// DATA / STATE
+// TODO: Create an array of questions for user input
+const questions = [
+    {type: "input",
+    message: "What is the title of your project?",
+    name: "Title" },
+    {type: "input",
+    message: "Enter a description of your project",
+    name: "Description" },
+    {type: "input",
+    message: "How can users install this code?",
+    name: "Installation",
+    },
+    {type: "list",
+    message: "Which license would you like to use for this project?",
+    name: "License",
+    choices: ["MIT License", "Mozilla Public License 2.0", "GNU GPLv3", "Unilicense" ]
+    },
+    {type: "input",
+    message: "What are the usage instructions?",
+    name: "Usage",
+    },
+    {type: "input",
+    message: "How can developers contribute to this project?",
+    name: "Contributing",
+    },
+    {type: "input",
+    message: "How can users test this code?",
+    name: "Tests",
+    },
+    {type: "input",
+    message: "What is your Github username?",
+    name: "Username",
+    },
+];
+
+
+// FUNCTIONS
+// TODO: Create a function to write README file
+function writeToFile({Title, Description, Installation, Usage, License, Contributing, Tests, Username}) {
+    const template = `# ${Title}
+
+    [license badge]
+    
+    ## Description
+    ${Description}
+    
+    ## Table of Contents
+    - Installation
+    - Usage
+    - License
+    - Contributing
+    - Tests
+    - Questions
+    
+    ## Installation
+    ${Installation}
+    
+    ## Usage
+    ${Usage}
+    
+    ## License
+    ${License}
+    
+    ## Contributing
+    ${Contributing}
+    
+    ## Tests
+    ${Tests}
+    
+    ## Questions
+    To get in touch with any questions, visit my <a href="https://github.com/${Username}"> Github Profile </a>`
+    fs.writeFile ('README.md', template, (err) => {
+        if (err) throw err;
+        console.log("README.md file created")
+    })
+
+}
+
+// USER INITIALIZATIONS
+
+
+// INITIALIZATIONS
+// TODO: Create a function to initialize app
+function init() {
+    inquirer
+      .prompt(questions)
+      .then((writeToFile))
+
+}
+
+// Function call to initialize app
+init();
+
 // const { join } = require('path');
 
 
@@ -12,20 +107,6 @@
 // // TODO: Create an array of questions for user input
 // // This array follows the example of activity 20 in this module
 
-// const questions = [
-//     {type: "input",
-//     message: "What is the title of your project?",
-//     name: "Title" },
-//     {type: "input",
-//     message: "Enter a description of your project",
-//     name: "Description" },
-//     {type: "input",
-//     message: "How can users install this code?",
-//     name: "Table of Contents",
-    
-//     },
-    
-// ];
 
 // const sections = [
 //     "Description", "Table of Contents", "Installation", "Usage", "License", "Contributing", "Tests", "Questions"
@@ -79,9 +160,6 @@
 
 
 // // USER INTERACTION
-// inquirer
-//   .prompt(questions)
-//   .then((createFile))
 
 // // INITIALIZATIONS
 // // TODO: Create a function to initialize app

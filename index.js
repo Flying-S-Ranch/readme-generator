@@ -42,6 +42,10 @@ const questions = [
     message: "What is your email address?",
     name: "Email",
     },
+    {type: "input",
+    message: "What credits would you like to add to your README file?",
+    name: "Credits",
+    },
 ];
 
 const licenseBadges= [
@@ -53,7 +57,7 @@ const licenseBadges= [
 
 // FUNCTIONS
 // TODO: Create a function to write README file
-function writeToFile({Title, Description, Installation, Usage, License, Contributing, Tests, Username, Email}) {
+function writeToFile({Title, Description, Installation, Usage, License, Contributing, Tests, Username, Email, Credits}) {
     function chooseBadge() {
         const badgeIndex = questions[3].choices.indexOf(License)
         badgeLicense = licenseBadges[badgeIndex]
@@ -79,6 +83,9 @@ ${Installation}
     
 ## Usage
 ${Usage}
+
+## Credits
+${Credits}
     
 ## License
 This project is covered under the ${License} license.
@@ -112,75 +119,3 @@ function init() {
 
 // Function call to initialize app
 init();
-
-// const { join } = require('path');
-
-
-// // DATA
-// // const entryOne = process.argv[2]
-// let answerString;
-
-// // TODO: Create an array of questions for user input
-// // This array follows the example of activity 20 in this module
-
-
-// const sections = [
-//     "Description", "Table of Contents", "Installation", "Usage", "License", "Contributing", "Tests", "Questions"
-// ]
-
-
-// // FUNCTION
-// // TODO: Create a function to write README file
-// // function writeToFile(fileName, data) {}
-// const createFile = (answer) => {
-//     const { Title } = answer
-//     const userTitle = `# ${Title}\n`
-//     fs.writeFile("README.md", userTitle, (err) => {
-//         if (err) throw err;
-//         console.log("Title saved!")
-//     })
-    
-//     const descriptionHeading = `## ${sections[0]}\n`
-//     fs.appendFile("README.md", descriptionHeading, (err) => {
-//         if (err) throw err;
-//         console.log("Description heading saved!")
-//     })
-
-//     const { Description } = answer
-//     const userDescription = `${Description}\n`
-//     fs.appendFile("README.md", userDescription, (err) => {
-//         if (err) throw err;
-//         console.log("Description content saved!")
-//     })
-//     // addSections();
-//     const tableContentsHeading = `## ${sections[1]}\n`
-//     fs.appendFile("README.md", tableContentsHeading, (err) => {
-//         if (err) throw err;
-//         console.log("Table of Contents heading saved!")
-//     })
-// }
-
-// // const addSections = () => {
-// //     for (const section of sections) {
-// //         let sectionHeading = `## ${section}\n`
-// //         fs.appendFile("README.md", sectionHeading, (err) => {
-// //             if (err) throw err;
-// //             console.log("sections added!")
-// //         })
-// //     }
-// // }
-
-// // const placeSections = (response) => {
-// //     console.log(response)
-// // }
-
-
-// // USER INTERACTION
-
-// // INITIALIZATIONS
-// // TODO: Create a function to initialize app
-// function init() {
-// }
-
-// // Function call to initialize app
-// init();

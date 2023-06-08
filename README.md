@@ -1,9 +1,9 @@
-# Bees
+# a
 
-[license badge]
+[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)
     
 ## Description
-all about knees
+a
     
 ## Table of Contents
 - [Installation](#Installation)
@@ -14,19 +14,19 @@ all about knees
 - [Questions](#Questions)
     
 ## Installation
-no installation necessary
+a
     
 ## Usage
-run node index in your terminal
+a
     
 ## License
-MIT License
+IBM Public License Version 1.0
     
 ## Contributing
-add more ees
+a
     
 ## Tests
-give it a whirl to see if it works
+a
     
 ## Questions
-To get in touch with any questions, visit my <a href="https://github.com/flying-s-ranch"> Github Profile </a>
+To get in touch with any questions, visit my <a href="https://github.com/a"> Github Profile </a>

@@ -4,6 +4,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // DATA / STATE
+let badgeLicense;
 // TODO: Create an array of questions for user input
 const questions = [
     {type: "input",
@@ -19,7 +20,7 @@ const questions = [
     {type: "list",
     message: "Which license would you like to use for this project?",
     name: "License",
-    choices: ["MIT License", "Mozilla Public License 2.0", "GNU GPLv3", "Unilicense" ]
+    choices: ["MIT License", "Mozilla Public License 2.0", "GNU GPLv3", "IBM Public License Version 1.0" ]
     },
     {type: "input",
     message: "What are the usage instructions?",
@@ -39,13 +40,24 @@ const questions = [
     },
 ];
 
+const licenseBadges= [
+    "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
+    "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)",
+    "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)",
+    "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)"
+]
 
 // FUNCTIONS
 // TODO: Create a function to write README file
 function writeToFile({Title, Description, Installation, Usage, License, Contributing, Tests, Username}) {
+    function chooseBadge() {
+        const badgeIndex = questions[3].choices.indexOf(License)
+        badgeLicense = licenseBadges[badgeIndex]
+    }
+    chooseBadge()
     const template = `# ${Title}
 
-[license badge]
+${badgeLicense}
     
 ## Description
 ${Description}

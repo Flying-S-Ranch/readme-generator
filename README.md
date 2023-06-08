@@ -1,9 +1,9 @@
-# Project Portfolio
+# sample title
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
     
 ## Description
-This is a place to store my best work
+sample description
     
 ## Table of Contents
 - [Installation](#Installation)
@@ -14,22 +14,22 @@ This is a place to store my best work
 - [Questions](#Questions)
     
 ## Installation
-No installation required
+sample installation
     
 ## Usage
-Click on the photos to learn more about each of my projects
+sample usage
 
 ## Credits
-A tutor helped me with the CSS code
+sample credits
     
 ## License
-This project is covered under the MIT License license.
+This project is covered under the GNU GPLv3 license.
     
 ## Contributing
-Developers can contribute by looking up the repository on my Github profile
+sample contributions
     
 ## Tests
-Open the inspector to see the code
+sample tests
     
 ## Questions
-To get in touch with any questions, visit my <a href="https://github.com/flying-s-ranch"> Github Profile </a> or send an <a href="mailto:samleashrauner@gmail.com">email</a>
+To get in touch with any questions, visit my <a href="https://github.com/flying-s-ranch"> Github Profile </a> or send an <a href="mailto:sam@sam.com">email</a>

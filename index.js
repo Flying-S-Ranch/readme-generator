@@ -6,6 +6,7 @@ const fs = require('fs');
 // DATA / STATE
 let badgeLicense;
 // TODO: Create an array of questions for user input
+// See the README for the source of Inquirer questions
 const questions = [
     {type: "input",
     message: "What is the title of your project?",
@@ -48,6 +49,7 @@ const questions = [
     },
 ];
 
+// See the README for the page where I found the badge links
 const licenseBadges= [
     "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
     "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)",
@@ -57,6 +59,8 @@ const licenseBadges= [
 
 // FUNCTIONS
 // TODO: Create a function to write README file
+// Lines 76-81: see the README for the source for how to create links
+// Line 100: see README for W3 Schools example for how to include an email link
 function writeToFile({Title, Description, Installation, Usage, License, Contributing, Tests, Username, Email, Credits}) {
     function chooseBadge() {
         const badgeIndex = questions[3].choices.indexOf(License)
@@ -98,6 +102,7 @@ ${Tests}
     
 ## Questions
 To get in touch with any questions, visit my <a href="https://github.com/${Username}"> Github Profile </a> or send an <a href="mailto:${Email}">email</a>`
+// The nodejs documentation was helpful while writing the fs.writeFile line, and I used their code for the error function (see README for link)
     fs.writeFile ('README.md', template, (err) => {
         if (err) throw err;
         console.log("README.md file created")
